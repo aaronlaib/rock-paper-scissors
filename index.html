@@ -20,6 +20,18 @@
       };
 
       console.log(computerPlay());
+
+      const playerSelection = () => {
+        const input = prompt("Please choose Rock, Paper or Scissors");
+
+        const inputFixed =
+          input.charAt(0).toUpperCase() +
+          input.slice(1, input.length).toLowerCase();
+
+        return inputFixed;
+      };
+
+      console.log(playerSelection());
     </script>
   </body>
 </html>
