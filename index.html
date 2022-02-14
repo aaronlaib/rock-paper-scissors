@@ -39,6 +39,16 @@
           else if (computerSelection === "Paper")
             return "You Lose! Paper beats Rock";
           else return "You Win! Rock beats Scissors";
+        } else if (player === "Paper") {
+          if (computerSelection === "Paper") return "Tie";
+          else if (computerSelection === "Scissors")
+            return "You Lose! Scissors beats Paper";
+          else return "You Win! Paper beats Rock";
+        } else if (player === "Scissors") {
+          if (computerSelection === "Scissors") return "Tie";
+          else if (computerSelection === "Rock")
+            return "You Lose! Rock beats Scissors";
+          else return "You Win! Scissors beats Paper";
         }
       };
 
