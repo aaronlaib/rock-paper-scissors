@@ -42,7 +42,15 @@
         }
       };
 
-      console.log(playRound("Rock", computerPlay()));
+      //console.log(playRound("Rock", computerPlay()));
+
+      const game = () => {
+        for (let i = 0; i < 5; i++) {
+          console.log(playRound(playerSelection(), computerPlay()));
+        }
+      };
+
+      game();
     </script>
   </body>
 </html>
