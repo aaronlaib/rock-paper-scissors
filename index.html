@@ -19,7 +19,7 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
 
-      console.log(computerPlay());
+      //console.log(computerPlay());
 
       const playerSelection = () => {
         const input = prompt("Please choose Rock, Paper or Scissors");
@@ -31,7 +31,18 @@
         return inputFixed;
       };
 
-      console.log(playerSelection());
+      //console.log(playerSelection());
+
+      const playRound = (player, computerSelection) => {
+        if (player === "Rock") {
+          if (computerSelection === "Rock") return "Tie";
+          else if (computerSelection === "Paper")
+            return "You Lose! Paper beats Rock";
+          else return "You Win! Rock beats Scissors";
+        }
+      };
+
+      console.log(playRound("Rock", computerPlay()));
     </script>
   </body>
 </html>
