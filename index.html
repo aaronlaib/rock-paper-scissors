@@ -7,6 +7,12 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <button onclick="handleOnClick('Rock')">Rock</button>
+    <button onclick="handleOnClick('Paper')">Paper</button>
+    <button onclick="handleOnClick('Scissors')">Scissors</button>
+    
+
+
     <script>
       const computerPlay = () => {
         const choiceNumber = getRandomInt(1, 3);
@@ -18,20 +24,6 @@
       const getRandomInt = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
-
-      //console.log(computerPlay());
-
-      const playerSelection = () => {
-        const input = prompt("Please choose Rock, Paper or Scissors");
-
-        const inputFixed =
-          input.charAt(0).toUpperCase() +
-          input.slice(1, input.length).toLowerCase();
-
-        return inputFixed;
-      };
-
-      //console.log(playerSelection());
 
       const playRound = (player, computerSelection) => {
         if (player === "Rock") {
@@ -51,16 +43,12 @@
           else return "You Win! Scissors beats Paper";
         }
       };
+      
+      const handleOnClick = (selection) => {
+        console.log(playRound(selection, computerPlay()));
 
-      //console.log(playRound("Rock", computerPlay()));
+      }
 
-      const game = () => {
-        for (let i = 0; i < 5; i++) {
-          console.log(playRound(playerSelection(), computerPlay()));
-        }
-      };
-
-      game();
     </script>
   </body>
 </html>
