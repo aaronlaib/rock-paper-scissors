@@ -11,7 +11,9 @@
     <button onclick="handleOnClick('Paper')">Paper</button>
     <button onclick="handleOnClick('Scissors')">Scissors</button>
     
+    <div id="results">
 
+    </div>
 
     <script>
       const computerPlay = () => {
@@ -45,9 +47,13 @@
       };
       
       const handleOnClick = (selection) => {
-        console.log(playRound(selection, computerPlay()));
+        const results = document.getElementById("results");
+        const textResult = document.createElement("p");
+        textResult.textContent = playRound(selection, computerPlay());
+        
+        results.appendChild(textResult);
+      };
 
-      }
 
     </script>
   </body>
