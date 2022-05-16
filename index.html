@@ -10,16 +10,14 @@
     <button onclick="handleOnClick('Rock')">Rock</button>
     <button onclick="handleOnClick('Paper')">Paper</button>
     <button onclick="handleOnClick('Scissors')">Scissors</button>
-    
-    <div id="score"></div>
-    <div id="results">
 
-    </div>
+    <div id="score"></div>
+    <div id="results"></div>
 
     <script>
       let playerScore = 0;
       let compScore = 0;
-      
+
       const computerPlay = () => {
         const choiceNumber = getRandomInt(1, 3);
         if (choiceNumber === 1) return "Rock";
@@ -33,33 +31,30 @@
 
       const playRound = (player, computerSelection) => {
         if (compScore >= 5) {
-          return 'End of Game: Computer wins! :('
+          return "End of Game: Computer wins! :(";
         }
         if (playerScore >= 5) {
-          return 'End of Game: You win!'
+          return "End of Game: You win!";
         }
-        
+
         if (player === computerSelection) {
-          return 'Tie';
+          return "Tie";
         }
 
         if (player === "Rock") {
           if (computerSelection === "Paper") {
             compScore++;
             return "You Lose! Paper beats Rock";
-          }
-          else {
+          } else {
             playerScore++;
             return "You Win! Rock beats Scissors";
           }
-
         }
         if (player === "Paper") {
           if (computerSelection === "Scissors") {
             compScore++;
             return "You Lose! Scissors beats Paper";
-          }
-          else {
+          } else {
             playerScore++;
             return "You Win! Paper beats Rock";
           }
@@ -68,20 +63,19 @@
           if (computerSelection === "Rock") {
             compScore++;
             return "You Lose! Rock beats Scissors";
-          }
-          else {
+          } else {
             playerScore++;
             return "You Win! Scissors beats Paper";
           }
         }
       };
-      
+
       const handleOnClick = (selection) => {
         const results = document.getElementById("results");
-        const score = document.getElementById("score")
+        const score = document.getElementById("score");
         const textResult = document.createElement("p");
         textResult.textContent = playRound(selection, computerPlay());
-        
+
         results.appendChild(textResult);
 
         score.textContent = `Player Score: ${playerScore} Computer Score: ${compScore}`;
